@@ -1,0 +1,8 @@
+body {
+    overflow-x: hidden;
+    background: url("https://s3-us-west-1.amazonaws.com/direct-contact/bg.jpg") top center no-repeat fixed #47403a;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
