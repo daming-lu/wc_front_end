@@ -28,12 +28,19 @@ loginApp.controller('LoginCtrl', ['$scope', '$http', function($scope, $http) {
             'email'     : $scope.email,
             'password'  : $scope.password
         };
+        /*
         $http.post(url, params).success(function(data) {
             console.log("returned data == \n");
             data = data['data'];
             console.log(JSON.stringify(data));
             //$scope.users = data;
         });
-
+        */
+        $http({
+            method: 'POST',
+            url: url,
+            data: params,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        });
     }
 }]);
