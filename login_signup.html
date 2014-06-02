@@ -28,14 +28,15 @@
     </head>
 
     <body class="wc_bg_cover">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+        <div ng-app="loginApp" class="container">
+            <div ng-controller="LoginCtrl" class="row">
+
+                <!-- Login Page -->
+                <div ng-show="isLogin" class="col-md-4 col-md-offset-4">
                     <div class="panel panel-default pad_top">
                         <div class="panel-heading">
                             <strong>Login</strong>
                         </div>
-
                         <div class="panel-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
@@ -71,7 +72,62 @@
                         </div>
 
                         <div class="panel-footer">
-                            Not Registered? <a href="#">Register here</a>
+                            Not Registered?
+                            <a href="#" ng-click="switchToRegister()">Register here</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Page -->
+                <div ng-show="!isLogin" class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default pad_top">
+                        <div class="panel-heading">
+                            <strong>Register</strong>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="inputFullName" class="col-sm-3 control-label">Full Name</label>
+
+                                    <div class="col-sm-9">
+                                        <input class="form-control" id="inputFullName" placeholder="Daming Lu" required="" type="text" maxlength="30"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+
+                                    <div class="col-sm-9">
+                                        <input class="form-control" id="inputEmail3" placeholder="Email" required="" type="email" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+
+                                    <div class="col-sm-9">
+                                        <input class="form-control" id="inputPassword3" placeholder="Password" required="" type="password" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" /> Remember me</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group last">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <button type="submit" class="btn btn-success btn-sm">Sign in</button> <button type="reset" class="btn btn-default btn-sm">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="panel-footer">
+                            Already Registered?
+                            <a href="#" ng-click="switchToLogin()">Login here</a>
                         </div>
                     </div>
                 </div>
