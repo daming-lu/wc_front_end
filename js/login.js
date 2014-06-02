@@ -28,6 +28,9 @@ loginApp.controller('LoginCtrl', ['$scope', '$http', function($scope, $http) {
             'email'     : $scope.email,
             'password'  : $scope.password
         };
+        var authParams = {
+            'zs': 'zs'
+        };
         /*
         $http.post(url, params).success(function(data) {
             console.log("returned data == \n");
@@ -36,10 +39,12 @@ loginApp.controller('LoginCtrl', ['$scope', '$http', function($scope, $http) {
             //$scope.users = data;
         });
         */
+        var combinedParams = angular.extend((params || {}), authParams);
+
         $http({
             method: 'POST',
             url: url,
-            data: params,
+            data: combinedParams,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
     }
