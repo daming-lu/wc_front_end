@@ -13,4 +13,27 @@ loginApp.controller('LoginCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.switchToLogin = function () {
         $scope.isLogin = true;
     };
+
+    newUser.email = "haha@gmail.com";
+    $scope.nUser = newUser;
+
+    $scope.fullName = "";
+    $scope.email = "";
+    $scope.password = "";
+
+    $scope.signUpNewUser = function () {
+        var url = "http://peirongli.dreamhosters.com/worldcup/dev/wc_back_end/signUpNewUser.php";
+        var params = {
+            'fullName'  : $scope.fullName,
+            'email'     : $scope.email,
+            'password'  : $scope.password
+        };
+        $http.post(url, params).success(function(data) {
+            console.log("returned data == \n");
+            data = data['data'];
+            console.log(JSON.stringify(data));
+            //$scope.users = data;
+        });
+
+    }
 }]);

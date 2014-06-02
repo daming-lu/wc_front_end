@@ -21,8 +21,10 @@
         </script>
 
         <!-- Import application specific code -->
-        <script type="text/javascript" src="js/login.js">
-        </script>
+
+        <script type="text/javascript" src="js/newuser.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+
         <link href="css/login.css" rel="stylesheet" type="text/css" />
         <link href="css/foundation.css" rel="stylesheet" type="text/css" />
     </head>
@@ -90,14 +92,14 @@
                                     <label for="inputFullName" class="col-sm-3 control-label">Full Name</label>
 
                                     <div class="col-sm-9">
-                                        <input class="form-control" id="inputFullName" placeholder="Daming Lu" required="" type="text" maxlength="30"/>
+                                        <input class="form-control" ng-model="fullName" id="inputFullName" placeholder="Daming Lu" required="" type="text" maxlength="30"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
 
                                     <div class="col-sm-9">
-                                        <input class="form-control" id="inputEmail3" placeholder="Email" required="" type="email" />
+                                        <input class="form-control" ng-model="email" id="inputEmail3" placeholder="Email" required="" type="email" />
                                     </div>
                                 </div>
 
@@ -105,8 +107,9 @@
                                     <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
 
                                     <div class="col-sm-9">
-                                        <input class="form-control" id="inputPassword3" placeholder="Password" required="" type="password" />
+                                        <input class="form-control" ng-model="password" id="inputPassword3" placeholder="Password" required="" type="password" />
                                     </div>
+                                    <h1> {{nUser.email}} </h1>
                                 </div>
 
                                 <div class="form-group">
@@ -119,7 +122,7 @@
 
                                 <div class="form-group last">
                                     <div class="col-sm-offset-3 col-sm-9">
-                                        <button type="submit" class="btn btn-success btn-sm">Sign in</button> <button type="reset" class="btn btn-default btn-sm">Reset</button>
+                                        <button type="submit" class="btn btn-success btn-sm" ng-click="signUpNewUser()">Sign up</button> <button type="reset" class="btn btn-default btn-sm">Reset</button>
                                     </div>
                                 </div>
                             </form>
